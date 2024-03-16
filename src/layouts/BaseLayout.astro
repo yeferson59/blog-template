@@ -6,16 +6,15 @@ import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
 import EditBlog from '@/components/editBlog'
-import { ViewTransitions } from 'astro:transitions'
+
 const { title, description, image, articleDate } = Astro.props
 ---
 
-<html lang='es' class='scroll-smooth'>
+<html lang='es-la' class='scroll-smooth'>
 	<head>
 		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} />
 		<ProviderTheme />
 		<ProviderAnimations />
-		<ViewTransitions />
 	</head>
 
 	<body class='bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white'>
