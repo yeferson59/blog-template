@@ -6,6 +6,12 @@ import TitlePage from '@/components/TitlePage'
 import { sluglify, unsluglify, getCategories, getPosts } from '@/utils'
 import { siteConfig } from '@/data/site.config'
 import Pagination from '@/components/Pagination'
+import { categorias } from '@/data/categories'
+import { CATEGORIES } from '@/data/categories'
+import { lookingForCategory } from '@/data/categories'
+
+const aboveNames: Readonly<string[]> = categorias
+const categories: Readonly<string[]> = CATEGORIES
 
 export async function getStaticPaths({ paginate }: any) {
 	const categories = await getCategories()
@@ -29,11 +35,19 @@ const params = Astro.params
 const { page } = Astro.props
 
 const unsluglifyNameCategory = unsluglify(params.category!.toLowerCase())
+
 const posts = page.data
+
+let aboveName: string = unsluglifyNameCategory
+
+let pos: number = await lookingForCategory(unsluglifyNameCategory, categories)
+if (pos != -1) {
+	aboveName = aboveNames[pos]
+}
 ---
 
 <BaseLayout title={params.category}>
-	<TitlePage title={unsluglifyNameCategory} />
+	<TitlePage title={aboveName} />
 	<ListCategories activeCategory={params.category} />
 	<ListPosts posts={posts} />
 	<Pagination page={page} />

@@ -1,10 +1,23 @@
 ---
 import { cn, sluglify } from '@/utils'
+import { categorias } from '@/data/categories'
+import { CATEGORIES } from '@/data/categories'
+import { lookingForCategoryNormal } from '@/data/categories'
 
 const { name = 'Ver todo', activeCategory } = Astro.props
 const currentPath = Astro.url.pathname
 const unsluglifyNameCategory = sluglify(name.toLowerCase())
 
+let aboveNames: Readonly<string[]> = categorias
+let categories: Readonly<string[]> = CATEGORIES
+
+let aboveName: string = 'Ver todo'
+
+let pos: number = await lookingForCategoryNormal(name, categories)
+
+if (pos != -1) {
+	aboveName = aboveNames[pos]
+}
 const isActive =
 	activeCategory?.toLocaleLowerCase() === unsluglifyNameCategory ||
 	(currentPath === '/' && name === 'Ver todo')
@@ -18,5 +31,5 @@ const isActive =
 			`border-black border-b-2 text-black z-10  dark:border-white dark:text-white dark:border-opacity-100 border-opacity-100`
 	)}
 >
-	{name}
+	{aboveName}
 </a>
