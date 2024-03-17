@@ -6,6 +6,7 @@ import MenuIcon from './icons/MenuIcon.astro'
 import Search from '@/components/Search'
 import TagIcon from './icons/TagIcon.astro'
 import ToggleTheme from './ToggleTheme.astro'
+import AboutIcon from './icons/AboutIcon.astro'
 
 // ADD YOUR SOCIAL NETWORKS HERE
 const SOCIALNETWORKS = [
@@ -25,20 +26,10 @@ const SOCIALNETWORKS = [
 
 <header class='relative flex items-center h-12 font-semibold'>
 	<a class='text-lg mr-auto hover:opacity-70' href='/'>Inicio</a>
-	<div
-		class='flex flex-col gap-4 md:flex-row md:border-r-2 border-black pr-4 dark:border-white mx-2'
-	>
-		<HeaderLink
-			href='/about'
-			class='flex items-center gap-1 text-2xl md:text-base hover:opacity-70'
-		>
-			<TagIcon /> Sobre mi
-		</HeaderLink>
-	</div>
 
 	<div
 		id='astro-header-drawer'
-		class='shadow rounded-l-lg md:bg-transparent dark:md:bg-transparent bg-white dark:bg-[#0a0910] md:shadow-none md:rounded-none md:border-none md:h-auto md:static absolute transition-transform duration-300 ease-in translate-x-96 md:translate-x-0 top-12 -right-5 pl-4 pt-6 pb-4 md:p-0 h-[200px] w-[200px] z-50'
+		class='shadow rounded-l-lg md:bg-transparent dark:md:bg-transparent bg-white dark:bg-[#0a0910] md:shadow-none md:rounded-none md:border-none md:h-auto md:static absolute transition-transform duration-300 ease-in translate-x-96 md:translate-x-0 top-12 -right-5 pl-4 pt-6 pb-4 md:p-0 h-[200px] w-[200px] z-50 md:mx-auto'
 	>
 		<nav
 			class='flex h-full flex-col justify-between gap-12 text-left md:flex-row md:w-full md:gap-5'
@@ -46,6 +37,9 @@ const SOCIALNETWORKS = [
 			<div
 				class='flex flex-col gap-4 md:flex-row md:border-r-2 border-black pr-4 dark:border-white'
 			>
+				<a href='/about' class='flex items-center gap-1 text-2xl md:text-base hover:opacity-70'>
+					<AboutIcon /> Sobre mi
+				</a>
 				<HeaderLink
 					href='/tags'
 					class='flex items-center gap-1 text-2xl md:text-base hover:opacity-70'
