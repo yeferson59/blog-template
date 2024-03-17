@@ -3,12 +3,27 @@ import { Image } from 'astro:assets'
 import FormattedDate from '@/components/FormattedDate'
 import ArrowUp from '@/components/icons/ArrowUp'
 
+import { categorias } from '@/data/categories'
+import { CATEGORIES } from '@/data/categories'
+import { lookingForCategoryNormal } from '@/data/categories'
+
+let aboveNames: Readonly<string[]> = categorias
+let categories: Readonly<string[]> = CATEGORIES
+
 const {
 	id,
 	data: { title, description, pubDate, heroImage, category },
 	readTime,
 	slug
 } = Astro.props
+
+let aboveName: string = ''
+
+let pos: number = await lookingForCategoryNormal(category, categories)
+
+if (pos != -1) {
+	aboveName = aboveNames[pos]
+}
 ---
 
 <article class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group'>
@@ -30,8 +45,7 @@ const {
 					<FormattedDate date={pubDate} />
 					<span class='text-sm'> {readTime}</span>
 				</div>
-
-				<span class='pb-4'>{category}</span>
+				<span class='pb-4'>{aboveName}</span>
 			</div>
 		</div>
 	</a>
