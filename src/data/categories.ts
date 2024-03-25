@@ -1,5 +1,6 @@
 // List of categories for blog posts
 export const CATEGORIES = [
+	'Introduccion',
 	'Programacion',
 	'Inversion',
 	'Tecnologia financiera',
@@ -8,6 +9,7 @@ export const CATEGORIES = [
 ] as const
 
 export const categorias = [
+	'Introducción',
 	'Programación',
 	'Inversión',
 	'Tecnología financiera',
