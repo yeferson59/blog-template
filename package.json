@@ -1,9 +1,9 @@
 {
-	"name": "blog-template",
+	"name": "blog-tecnofinanzas",
 	"type": "module",
-	"version": "1.1.0",
-	"description": "A template for creating a blog with Astro",
-	"author": "danielcgilibert",
+	"version": "1.1.2",
+	"description": "a blog of technology and finances",
+	"author": "Yeferson",
 	"license": "GPL-3.0-only",
 	"repository": {
 		"type": "git",
@@ -17,7 +17,7 @@
 		"astro-b"
 	],
 	"bugs": {
-		"url": "https://github.com/danielcgilibert/blog-template/issues"
+		"url": "https://github.com/yeferson59/blog-template/issues"
 	},
 	"scripts": {
 		"dev": "npx tinacms dev -c \"astro dev\"",
