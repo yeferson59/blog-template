@@ -46,7 +46,10 @@ if (pos != -1) {
 }
 ---
 
-<BaseLayout title={params.category}>
+<BaseLayout
+	title={params.category}
+	description=`La categoría ${params.category} del blog Tecnofinazas`
+>
 	<TitlePage title={aboveName} />
 	<ListCategories activeCategory={params.category} />
 	<ListPosts posts={posts} />

@@ -19,12 +19,7 @@ const { title, description, pubDate, heroImage, tags } = data
 const articleDate = pubDate.toISOString()
 ---
 
-<BaseLayout
-	title={title}
-	description={description}
-	image={heroImage?.src}
-	articleDate={articleDate}
->
+<BaseLayout title={title} description={description} image={heroImage.src} articleDate={articleDate}>
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none'>
 		<header class='mb-3 flex flex-col justify-center items-center gap-6'>
 			<div class='flex flex-col gap-2'>
@@ -42,7 +37,7 @@ const articleDate = pubDate.toISOString()
 			</div>
 
 			<div class='flex flex-wrap justify-center items-center gap-2 gap-y-4 md:gap-5'>
-				{tags.map((tag) => <Tag tag={tag} />)}
+				{tags.map((tag: string) => <Tag tag={tag} />)}
 			</div>
 		</header>
 
