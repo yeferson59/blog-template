@@ -38,7 +38,7 @@ export const navigations = [
 ---
 
 <header class='relative flex items-center h-12 font-semibold'>
-	<a class='text-lg mr-auto hover:opacity-70' href='/'>Inicio</a>
+	<HeaderLink class='text-lg mr-auto hover:opacity-80' href='/'> Inicio </HeaderLink>
 
 	<div
 		id='astro-header-drawer'
@@ -54,7 +54,7 @@ export const navigations = [
 					navigations.map((nav) => (
 						<HeaderLink
 							href={nav.href}
-							class='flex items-center gap-1 text-2xl md:text-base hover:opacity-70'
+							class='flex items-center gap-1 text-2xl md:text-base hover:opacity-80'
 						>
 							{<nav.icon />} {nav.name}
 						</HeaderLink>
